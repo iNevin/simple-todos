@@ -1,0 +1,76 @@
+
+<head>
+  <title>simple-todos</title>
+</head>
+
+<body>
+  
+
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+  <!-- {{> nevin}} -->
+
+  <ul>
+    {{#each tasks}}
+      {{> taskList}}
+    {{/each}}
+  </ul>
+
+  <ul>
+    {{#each mongoTasks}}
+      {{> MongoTaskList}}
+    {{/each}}
+  </ul>
+
+  <header>
+    <h1>Todo List</h1>
+    <form class="new-task">
+<<<<<<< HEAD
+      <input type="text" name="textName" placeholder="Type to add new tasks here test" />
+=======
+      <input type="text" name="textName" placeholder="Type to add new tasks" />
+>>>>>>> parent of 9a2b716... Changed placeholder txt
+    </form>
+  </header>
+
+  <ul>
+    {{#each tasks}}
+      {{> task}}
+    {{/each}}
+  </ul>
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+  <a href="toDoList.html">Go toDoList</a>
+  <br/>
+  <a href="http://www.attukal.org">Attukal Devi</a>
+  <br/>
+</template>
+
+<template name="taskList">
+  <li>{{text}}</li>
+</template>
+
+<template name="MongoTaskList">
+  <!--  <li>Data from MongoDB   {{text}} {{createdAt}}</li> -->
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+ 
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+ 
+    <span class="text">{{text}} {{createdAt}}</span>
+  </li>
+</template>
+
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+ 
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+ 
+    <span class="text">{{text}}</span>
+  </li>
+</template>

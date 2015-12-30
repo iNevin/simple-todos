@@ -1,0 +1,21 @@
+
+C:\Nevin\Projects\meteor\simple-todos>meteor mongo
+
+meteor:PRIMARY> show dbs
+admin   (empty)
+local   0.063GB
+meteor  0.031GB
+meteor:PRIMARY> use meteor
+switched to db meteor
+meteor:PRIMARY> show collections
+mongoTable
+mongoTasks
+system.indexes
+tasks
+
+meteor:PRIMARY> db.mongoCollections.insert({ text: "Hello world!", createdAt: new Date() });
+
+meteor:PRIMARY> db.mongoTable.find()
+
+meteor:PRIMARY> db.mongoTable.find().pretty()
+
